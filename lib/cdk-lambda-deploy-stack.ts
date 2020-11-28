@@ -24,6 +24,7 @@ export class CdkLambdaDeployStack extends cdk.Stack {
     });
 
     // API Gateway points to the Lambda Alias, not directly the to Function. 
+    // Use default settings to proxy everthing to the lambda. 
     new apigw.LambdaRestApi(this, 'Endpoint', {
       handler: alias
     });
